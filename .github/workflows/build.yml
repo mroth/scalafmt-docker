@@ -1,0 +1,11 @@
+name: Build
+on: [push]
+
+# attempt to do a docker build. actual builds happen on docker hub, but we
+# replicate here so that we can verify PRs won't break anything.
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - run: docker build .
