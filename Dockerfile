@@ -4,7 +4,7 @@ RUN curl -s -Lo coursier https://git.io/coursier-cli && \
     chmod +x coursier && \
     mv ./coursier /usr/local/bin
 
-ARG SCALAFMT_VERSION=2.2.1
+ARG SCALAFMT_VERSION=2.3.2
 RUN coursier bootstrap org.scalameta:scalafmt-cli_2.12:${SCALAFMT_VERSION} \
     -r sonatype:snapshots \
     -o /usr/local/bin/scalafmt --standalone --main org.scalafmt.cli.Cli
